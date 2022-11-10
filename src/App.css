@@ -600,3 +600,21 @@ color: #fff !important;
 .filter_color .icon_check{
   transform: translate(-7px, -7px) !important;
 }
+
+
+/* cart_section */
+.cart_section .cart_data thead th{
+  font-size: 13px;
+  color: #aaa;
+}
+.cart_section .cart_data thead{
+  border-bottom: 2px solid #aaa;;
+}
+.cart_section .cart_data tbody tr td{
+  padding: 12px;
+}
+
+.cart_section .cart_data{
+ max-width: 950px;
+ margin: auto;
+}

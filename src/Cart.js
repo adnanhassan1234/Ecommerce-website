@@ -1,7 +1,52 @@
 import styled from "styled-components";
+import { useCartContext } from "./Context/Cart_context";
 
 const Cart = () => {
-  return <Wrapper></Wrapper>;
+
+  const { cart } = useCartContext();
+  console.log("🚀 ~ file: Cart.js ~ line 7 ~ Cart ~ cart", cart);
+
+  return (
+    <>
+      <div className="cart_section my-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="cart_data table-responsive">
+                <table class="table text-center">
+                  <thead>
+                    <tr>
+                      <th className="col">ITEM</th>
+                      <th className="col">PRICE</th>
+                      <th className="col">QUANTITY</th>
+                      <th className="col">SUBTOTAL</th>
+                      <th className="col">REMOVE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                    </tr>
+                    <tr>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 };
 
 const Wrapper = styled.section`
