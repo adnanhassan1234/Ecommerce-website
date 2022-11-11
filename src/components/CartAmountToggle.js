@@ -7,9 +7,9 @@ const CartAmountToggle = ({ amount, setIncrement, setDecrement }) => {
     return (
         <>
 
-            <Button className="btn btn-primary my-1 mx-1" onClick={() => setDecrement()}> <AiOutlineMinus className='icon_plus_minus' /> </Button>
+            <Button className="btn btn-primary plusMinus my-1 mx-1" onClick={() => setDecrement()}> <AiOutlineMinus className='icon_plus_minus' /> </Button>
             <span className='amount mx-2'>{amount}</span>
-            <Button className="btn btn-primary my-1 mx-1" onClick={() => setIncrement()}> <AiOutlinePlus className='icon_plus_minus' /> </Button>
+            <Button className="btn btn-primary plusMinus my-1 mx-1" onClick={() => setIncrement()}> <AiOutlinePlus className='icon_plus_minus' /> </Button>
 
         </>
     )

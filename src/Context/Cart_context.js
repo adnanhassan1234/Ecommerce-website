@@ -1,31 +1,57 @@
-import React , { createContext , useContext , useReducer } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import reducer from '../Reducer/CartReducer';
 
 /* Creating a context object. */
- const cartProvider =  createContext();
+const cartProvider = createContext();
+
+/**
+ * If the local storage item 'cartItems' is an empty array, return an empty array, otherwise return 
+ */
+const getLocalCartData = () => {
+  let localCartData = localStorage.getItem('cartItems');
+  if (localCartData === []) {
+    return [];
+  } else {
+    /* Parsing the stringified data from local storage and returning it as an array. */
+    return JSON.parse(localCartData);
+  }
+}
 
 const initialState = {
-    cart: [],
-    total_item: "",
-    total_amount: "",
-    shipping_fee: 50000,
+  // cart: [],
+  /* Calling the function `getLOcalCartData()` and setting the return value to the `cart` property. */
+  cart: getLocalCartData(),
+  total_item: "",
+  total_amount: "",
+  shipping_fee: 50000,
 };
 
-const Cart_context = ({children}) => {
+const Cart_context = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
 
-  const addToCart = (id, color, amount , product) => {
-   /* Dispatching an action to the reducer. */
-    dispatch({type:"ADD_TO_CART" , payload: {id, color, amount , product} });
+  const addToCart = (id, color, amount, product) => {
+    /* Dispatching an action to the reducer. */
+    dispatch({ type: "ADD_TO_CART", payload: { id, color, amount, product } });
   };
+
+  const removeItem = (id) => {
+    dispatch({ type: "REMOVE_ITEM", payload: id });
+  };
+
+  /* Saving the state of the cart to local storage. */
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(state.cart));
+  }, [state.cart]);
+
+
 
   return (
     <>
-     <cartProvider.Provider value={{...state , addToCart}}>
+      <cartProvider.Provider value={{ ...state, addToCart, removeItem }}>
         {children}
-     </cartProvider.Provider>
+      </cartProvider.Provider>
     </>
   )
 }
@@ -39,4 +65,4 @@ const useCartContext = () => {
 };
 
 export default Cart_context;
-export {cartProvider , useCartContext};
+export { cartProvider, useCartContext };

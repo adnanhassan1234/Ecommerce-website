@@ -28,6 +28,19 @@ const CartReducer = (state, action) => {
       };
    }
 
+   if (action.type === "REMOVE_ITEM") {
+      /* Filtering the cart array and returning a new array with the item that has the same id as the
+      action.payload removed. */
+      let updatedCart = state.cart.filter((currItem) => {
+         return currItem.id !== action.payload
+      })
+      
+      return {
+         ...state,
+         cart: updatedCart,
+      };
+   };
+
    return state;
 
 };

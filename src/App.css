@@ -612,9 +612,44 @@ color: #fff !important;
 }
 .cart_section .cart_data tbody tr td{
   padding: 12px;
+  /* max-width: 100px; */
 }
 
 .cart_section .cart_data{
  max-width: 950px;
  margin: auto;
+}
+.cart_section table img {
+ width: 55px;
+ border-radius: 2px;
+ height: 55px;
+ border-radius: 2px;
+}
+
+.cart_section .content button {
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 0px !important;
+}
+.cart_section .table .color {
+  text-align: initial;
+}
+.delete_icon{
+  color: red !important;
+  font-size: 26px;
+  cursor: pointer;
+}
+/* .cart_section .table .plus_minus{
+  text-align: initial;
+} */
+.cart_section .icon_plus_minus {
+  color: black !important;
+}
+
+.cart_section .plusMinus {
+  padding: 0px 10px;
+  background-color: transparent !important;
+}
+.table>tbody {
+  vertical-align: middle !important;
 }

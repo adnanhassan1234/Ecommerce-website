@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import CartItem from "./components/CartItem";
 import { useCartContext } from "./Context/Cart_context";
 
 const Cart = () => {
 
   const { cart } = useCartContext();
-  console.log("🚀 ~ file: Cart.js ~ line 7 ~ Cart ~ cart", cart);
+  console.log("🚀 ~ file: Cart.js ~ line 7 ~ Cart ~ cart", cart); // particular data add on cart page when user click "add to cart" button.
 
   return (
     <>
@@ -15,7 +16,7 @@ const Cart = () => {
               <div className="cart_data table-responsive">
                 <table class="table text-center">
                   <thead>
-                    <tr>
+                    <tr className="text-center">
                       <th className="col">ITEM</th>
                       <th className="col">PRICE</th>
                       <th className="col">QUANTITY</th>
@@ -24,20 +25,18 @@ const Cart = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                    </tr>
-                    <tr>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                    </tr>
+                    {/* {cart.map((Currtem, index) => (
+                      <tr key={index}>
+                        <td>{item.id}</td>
+                        <td>{item.name}</td>
+                        <td>{item.image}</td>
+                      </tr>
+                    ))} */}
+                    {
+                       cart.map((CurrItem) => {
+                       return <CartItem key={CurrItem.id} {...CurrItem} />
+                       })
+                      }
                   </tbody>
                 </table>
               </div>
