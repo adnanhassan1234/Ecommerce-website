@@ -418,6 +418,7 @@ text-decoration: underline;
 }
 .add_to_cart_button .btn-primary{
   padding: 5px 24px;
+  float: right;
 }
 
 
@@ -616,7 +617,7 @@ color: #fff !important;
 }
 
 .cart_section .cart_data{
- max-width: 950px;
+ max-width: 980px;
  margin: auto;
 }
 .cart_section table img {
@@ -652,4 +653,55 @@ color: #fff !important;
 }
 .table>tbody {
   vertical-align: middle !important;
+}
+
+.cart_section .full{
+  max-width: 980px;
+  margin: auto;
+ }
+
+.cart_section .cart_two_button{
+  display: flex;
+  justify-content: space-between;
+ }
+.cart_section .cart_two_button .MuiButton-contained{
+  text-decoration: none !important;
+  border: none !important;
+ }
+.empty_data h3{
+    padding-top: 90px;
+    padding-bottom: 90px;
+    text-align: center;
+    font-family: inherit;
+}
+
+.navbar .total_item{
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* cart_total_amount */
+
+.cart_total_amount{
+  padding: 12px;
+  float: right;
+  width: 60%;
+  border-radius: 3px;
+  background-color: rgb(250, 245, 245);
+}
+.cart_total_amount .sub_total{
+float: right !important;
+}
+.cart_total_amount h6{
+  font-family: 'Montserrat' !important; 
+}
+
+@media (max-width: 767px) {
+  .cart_total_amount{
+    padding: 12px;
+    float: right;
+    width: 100%;
+    border-radius: 3px;
+    background-color: rgb(250, 245, 245);
+  }
 }

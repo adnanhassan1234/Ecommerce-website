@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
+import { useCartContext } from '../Context/Cart_context';
 
 const Nav = () => {
+
+    const { total_item } = useCartContext();
 
     const deleteItem = () => {
         localStorage.removeItem("auth");
@@ -37,7 +40,7 @@ const Nav = () => {
 
                         <div className="navbar-navs mx-auto">
                             <NavLink to="/login" type='button' className="btn btn-primary mx-4">LOG IN</NavLink>
-                            <NavLink to="/cart" className="btn btn-light mx-1"><FiShoppingCart /><span className='total-cart-item'>10</span></NavLink>
+                            <NavLink to="/cart" className="btn btn-light total_item mx-1"><FiShoppingCart /><span className='total-cart-item'>{total_item} </span></NavLink>
                         </div>
                     </div>
                 </div>

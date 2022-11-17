@@ -1,11 +1,34 @@
+import React, { useEffect } from 'react';
 import styled from "styled-components";
 import CartItem from "./components/CartItem";
 import { useCartContext } from "./Context/Cart_context";
+import { useNavigate, NavLink } from "react-router-dom";
+import Button from '@material-ui/core/Button';
+import FormatPrice from './Helper/FormatPrice';
 
 const Cart = () => {
 
-  const { cart } = useCartContext();
+  const navigate = useNavigate();
+
+  const { cart, clearCart , total_price , shipping_fee } = useCartContext();
   console.log("🚀 ~ file: Cart.js ~ line 7 ~ Cart ~ cart", cart); // particular data add on cart page when user click "add to cart" button.
+
+
+  useEffect(() => {
+    if (!localStorage.getItem("cartItems")) {
+      navigate("/products");
+    }
+  }, [])
+
+/* This is a conditional rendering. If the cart is empty, it will render the div with the className
+"empty_data" and the h3 tag. */
+  if(cart.length == 0) {
+    return (
+        <div className="empty_data">
+          <h3>No Cart in Item</h3>
+        </div>
+    )
+  }
 
   return (
     <>
@@ -33,12 +56,36 @@ const Cart = () => {
                       </tr>
                     ))} */}
                     {
-                       cart.map((CurrItem) => {
-                       return <CartItem key={CurrItem.id} {...CurrItem} />
-                       })
-                      }
+                      cart.map((CurrItem) => {
+                        return <CartItem key={CurrItem.id} {...CurrItem} />
+                      })
+                    }
                   </tbody>
                 </table>
+              </div>
+            </div>
+            {/* div.two_button */}
+            <div className="col-lg-12">
+              <div className="full">
+                <div className="cart_two_button my-2">
+                  <NavLink to="/products">
+                    <Button type="button" variant="contained" color="primary">CONTINUE SHOPPING</Button>
+                  </NavLink>
+                  <Button type="button" variant="contained" color="secondary" onClick={clearCart}>CLEAR CART
+                  </Button>
+                </div>
+              </div>
+            </div>
+            {/*sub total all cart amount */}
+            <div className="col-lg-12">
+              <div className="full">
+                <div className="cart_total_amount my-4">
+                  <h6 className='my-2'>Subtotal : <span className='sub_total'> <b> <FormatPrice price={total_price} /> </b> </span></h6>
+
+                  <h6 className='my-2'>Shipping Fee : <span className='sub_total'> <b> <FormatPrice price={shipping_fee} /> </b></span></h6>  <hr />
+
+                  <h6 className='my-2'>Order Total : <span className='sub_total'> <b> <FormatPrice price={shipping_fee + total_price} />  </b> </span></h6>
+                </div>
               </div>
             </div>
           </div>

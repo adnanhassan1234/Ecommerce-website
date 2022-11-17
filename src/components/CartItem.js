@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import FormatPrice from '../Helper/FormatPrice';
 import CartAmountToggle from './CartAmountToggle';
 import { MdDeleteOutline } from 'react-icons/md';
@@ -6,15 +6,7 @@ import { useCartContext } from '../Context/Cart_context';
 
 /* A function that takes in an object and returns a React component. */
 const CartItem = ({ id, name, color, image, price, amount }) => {
-    const { removeItem } = useCartContext();
-
-    const setIncrement = () => {
-        // amount < stock ? setAmount(amount + 1) : setAmount(stock);
-    };
-
-    const setDecrement = () => {
-        // amount > 1 ? setAmount(amount - 1) : setAmount(1);
-    };
+    const { removeItem , setIncrement , setDecrement } = useCartContext();
 
     return (
         <>
@@ -45,7 +37,11 @@ const CartItem = ({ id, name, color, image, price, amount }) => {
                     <div className="stock_incre_decre_product">
                         {/* add to card with amount */}
                         <div className="amount_section plus_minus">
-                            <CartAmountToggle amount={amount} setIncrement={setIncrement} setDecrement={setDecrement} />
+                            <CartAmountToggle
+                                amount={amount}
+                                setIncrement={() => setIncrement(id)}
+                                setDecrement={() => setDecrement(id)}
+                            />
                         </div>
                     </div>
                 </td>

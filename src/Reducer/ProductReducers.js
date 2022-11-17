@@ -11,7 +11,7 @@ const ProductReducers = (state, action) => {
 
             return {
                 ...state,
-                products: action.payload,  // all product
+                products: action.payload,        // all product
                 featureProducts: featureData,   // just featureProducts data
             };
 

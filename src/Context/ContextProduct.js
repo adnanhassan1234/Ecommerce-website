@@ -29,6 +29,7 @@ const ContextProduct = ({ children }) => {
             dispatch({ type: "SET_API_DATA", payload: products });
             setIsLoader(true)
             console.log("API data has been successfully > all data", res.data);
+            // localStorage.setItem("cart", JSON.stringify(res.data));
         } catch (error) {
             dispatch({ type: "API_ERROR" });
             console.log("API data could not be fetched", error);
