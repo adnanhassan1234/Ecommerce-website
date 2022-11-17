@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const HeroSection = ({ getData }) => {
 
+   /* Destructuring the object. */
     const { title, description, image } = getData;
 
     return (
@@ -20,7 +21,7 @@ const HeroSection = ({ getData }) => {
                                     <p>{description}</p>
                                 </div>
                                 <div className="btn_sec">
-                                    <NavLink>
+                                    <NavLink to="/products">
                                         <button type='button' className='btn btn-light'>shop now</button>
                                     </NavLink>
                                 </div>

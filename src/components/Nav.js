@@ -15,7 +15,7 @@ const Nav = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg " >
-                <div className="container">
+                <div className="container-fluid">
                     <NavLink to="/" className="logo">
                         <img src="./images/logo.png" width="70%" alt="my logo" />
                     </NavLink>

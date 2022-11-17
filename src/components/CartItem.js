@@ -47,7 +47,7 @@ const CartItem = ({ id, name, color, image, price, amount }) => {
                 </td>
                 {/* A React component that takes in a prop called price and returns a formatted
                       price. */}
-                <td className='mobile_hide_view'>
+                <td>
                     <div className="total_amount">
                         <p className='mb-0'> <FormatPrice price={price * amount} /> </p>
                     </div>

@@ -47,9 +47,9 @@ const Footer = () => {
                             <div className="full p-2">
                                 <h5>Follow us</h5>
                                 <div className="social_icon">
-                                   <span> <NavLink to="#"><BsFacebook /></NavLink></span>
-                                   <span><NavLink to="#"><RiInstagramFill /></NavLink></span>
-                                  <span> <NavLink to="#"><BsYoutube /></NavLink></span>
+                                   <span> <a href="https://www.facebook.com/profile.php?id=100005462919192&mibextid=ZbWKwL" target="_blank"><BsFacebook /></a></span>
+                                   <span><a href="https://youtube.com/channel/UCw8KoJv9pjDqYb82av2NGEg" target="_blank"><RiInstagramFill /></a></span>
+                                  <span> <a href="https://youtube.com/channel/UCw8KoJv9pjDqYb82av2NGEg" target="_blank"><BsYoutube /></a></span>
                                 </div>
                             </div>
                         </div>
