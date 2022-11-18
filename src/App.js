@@ -9,6 +9,7 @@ import ErrorPage from "./ErrorPage";
 import Nav from "./components/Nav";
 import Footer from "./Footer";
 import Products from "./components/Products";
+import Login from "./components/Login";
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/singleproduct/:id" element={<SingleProduct />} />
             <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/login" element={<Login />} />
             <Route path="*" element={<ErrorPage />} >
             </Route>
           </Routes>

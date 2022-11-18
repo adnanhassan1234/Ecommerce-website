@@ -17,7 +17,7 @@ const Nav = () => {
             <nav className="navbar navbar-expand-lg " >
                 <div className="container-fluid">
                     <NavLink to="/" className="logo">
-                        <img src="./images/logo.png" width="70%" alt="my logo" />
+                        <img src="./images/logo.jpg" width="70%" alt="my logo" />
                     </NavLink>
                     <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <i className="fa fa-bars" aria-hidden="true"></i>

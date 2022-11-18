@@ -5,7 +5,7 @@ import HeroSection from './HeroSection';
 
 const About = () => {
 
-  const {myName} = useProductContext();
+  const {myName} = useProductContext();   // just demo
 
 
   const data = {
@@ -17,7 +17,7 @@ const About = () => {
 
   return (
     <>
-      {myName}
+      {myName} // just demo
       <HeroSection getData={data} />
     </>
   )

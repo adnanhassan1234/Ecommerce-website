@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import React, { useEffect, useState } from 'react';
 import { useProductContext } from "./Context/ContextProduct";
 import { useParams } from "react-router-dom";
@@ -11,6 +10,7 @@ import { RiSecurePaymentLine } from 'react-icons/ri';
 import SingleProductImage from "./components/SingleProductImage";
 import Stars from "./components/Stars";
 import AddToCart from "./components/AddToCart";
+
 
 
 const SingleProduct = () => {

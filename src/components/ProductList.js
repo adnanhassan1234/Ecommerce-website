@@ -6,7 +6,9 @@ import ListView from './ListView';
 
 
 const ProductList = () => {
+
     const { filter_products, grid_view } = useFilterContext();
+    
     console.log("🚀 ~ file: ProductList.js ~ line 10 ~ ProductList ~ filter_products", filter_products);
 
     if (grid_view === true) {

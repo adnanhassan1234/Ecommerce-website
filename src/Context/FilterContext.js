@@ -62,7 +62,7 @@ const FilterContext = ({ children }) => {
         dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products })
     }, [products])
 
-    //update filter value
+    // update filter value
 
     const updateFilterValue = (event) => {
         let name = event.target.name;

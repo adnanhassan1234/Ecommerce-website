@@ -20,7 +20,7 @@ const ContextProduct = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [isLoader, setIsLoader] = useState(false); //spinner
 
-
+ 
     //  My 1st API call by Feature_all_Product_Section
     const getProducts = async () => {
         try {
