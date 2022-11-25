@@ -905,3 +905,18 @@ span {
         border: none !important;
       }
     }
+
+    .dropdown-menu[data-bs-popper] {
+      top: 90%;
+      left: -68px;
+      margin-top: var(--bs-dropdown-spacer);
+      text-align: center;
+  }
+  @media (max-width: 991px) {
+    .dropdown-menu[data-bs-popper] {
+      top: 90%;
+      left: -82px;
+      margin-top: var(--bs-dropdown-spacer);
+      text-align: center;
+  }
+  }
