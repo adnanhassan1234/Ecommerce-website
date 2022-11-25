@@ -53,7 +53,8 @@ const Nav = () => {
                             }
 
                             <NavLink to="/cart" className="btn btn-light total_item mx-1"><FiShoppingCart /><span className='total-cart-item'>{total_item} </span></NavLink>
-                            {/* Laptop view user profile */}
+                            
+                            {/*============ Laptop view user profile ===============*/}
                             <NavLink className="btn btn-light name_none total_item mx-1">
                                 {
 
@@ -90,7 +91,8 @@ const Nav = () => {
                     </div>
 
                 </div>
-                {/* mobile_view_user_profile */}
+
+                {/*=========== mobile_view_user_profile ================*/}
                 <NavLink className="btn btn-light  total_items mx-1">
                     {
 
