@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import Typical from 'react-typical';
 
 const HeroSection = ({ getData }) => {
 
-   /* Destructuring the object. */
+    /* Destructuring the object. */
     const { title, description, image } = getData;
+
+    let time = new Date().toLocaleTimeString();
+
+    const [currTime, setCurrTime] = useState(time);
+
+    /* A hook that is used to update the state of the component. */
+    useEffect(() => {
+        setInterval(() => {
+            time = new Date().toLocaleTimeString();
+            setCurrTime(time);
+        }, 1000)
+    },)
+
 
     return (
         <>
@@ -15,7 +29,12 @@ const HeroSection = ({ getData }) => {
                             <div className="full p-3 text-white">
                                 <div className="title">
                                     <h6>Welcome to</h6>
-                                    <h2>{title}</h2>
+                                    {/* <h2>{title}</h2> */}
+                                   <h2><Typical
+                                        steps={[`${title}`, 3000, `${title}`, 3000]}
+                                        loop={Infinity}
+                                        wrapper="p"
+                                    /></h2> 
                                 </div>
                                 <div className="para">
                                     <p>{description}</p>
@@ -24,6 +43,9 @@ const HeroSection = ({ getData }) => {
                                     <NavLink to="/products">
                                         <button type='button' className='btn btn-light'>shop now</button>
                                     </NavLink>
+                                </div>
+                                <div className="time text-center">
+                                    <h1> {currTime} </h1>
                                 </div>
                             </div>
                         </div>

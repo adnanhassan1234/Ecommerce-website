@@ -1,9 +1,11 @@
 import React, { useState , useEffect} from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const Contact = () => {
 
   const [isLoader, setIsLoader] = useState(false); //spinner
-
+  const { user, isAuthenticated } = useAuth0();
 
   useEffect(() => {
     setIsLoader(true);
@@ -31,8 +33,13 @@ const Contact = () => {
             <div className="col-lg-12">
               <div className="contact-form">
                 <form action="https://formspree.io/f/xaykpyay" method="POST">
-                  <input type="text" className="form-control my-3" name="username" placeholder="Enter username" required />
-                  <input type="email" className="form-control my-3" name="email" placeholder="Enter email" required />
+                  <input type="text" className="form-control my-3" name="username"
+                   value={ isAuthenticated ? user.name : "" }
+                   placeholder="Enter username" required />
+                  <input type="email" className="form-control my-3" name="email" placeholder="Enter 
+                  email" required  
+                  value={ isAuthenticated ? user.email : "" }
+                  />
                   <input type="password" className="form-control my-3" name="password" placeholder="Enter password" required />
                   <input type="file" className="form-control my-3" name="file" required />
                   <textarea className="form-control my-3" name="message" cols="30" rows="10" required placeholder="Enter message"></textarea>

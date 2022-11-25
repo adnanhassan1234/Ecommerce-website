@@ -12,7 +12,6 @@ console.log("🚀 ~ file: SingleProductImage.js ~ line 4 ~ SingleProductImage ~ 
 //     setIsLoader(true);
 //   }, [imgs])
 
-
   
 //   if (!isLoader) {
 //     return <div className='loader'>

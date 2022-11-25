@@ -158,6 +158,7 @@ const CartReducer = (state, action) => {
       let updatedTotalPrice = state.cart.reduce((initialVal, currElem) => {   // loop
          let {price , amount} = currElem;
 
+         /* Adding the price of each product to the initial value. */
          initialVal = initialVal + (price * amount);
          return initialVal;
       },0)

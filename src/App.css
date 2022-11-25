@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600;);
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 * {
   margin: 0px;
@@ -18,7 +18,7 @@ h5,
 h6,
 span {
   /* font-family: "Work Sans", sans-serif; */
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 
 }
 
@@ -59,6 +59,10 @@ span {
 .hero_section {
   padding-top: 90px;
   padding-bottom: 70px;
+}
+.hero_section h2{
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* ================ service_section ============ */
@@ -819,6 +823,11 @@ span {
     display: none !important;
   }
 }
+@media (max-width: 1100px) {
+  .name_none {
+    display: none !important;
+  }
+}
 
 @media (max-width: 991px) {
   .navbar .navbar-navs {
@@ -875,4 +884,24 @@ span {
     }
     .admin_section  .card-header{
      border-top: 2px solid #3F32F5;
+    }
+
+    .login_profile img{
+      width: 42px;
+      height: 42px;
+      border: 3px solid lightgray;
+      border-radius: 50%;
+    }
+    .navbar .total_items {
+      background-color: transparent !important;
+      display: none;
+      border: none !important;
+    }
+
+    @media (max-width: 991px) {
+      .navbar .total_items {
+        background-color: transparent !important;
+        display: block;
+        border: none !important;
+      }
     }

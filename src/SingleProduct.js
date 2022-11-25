@@ -12,7 +12,6 @@ import Stars from "./components/Stars";
 import AddToCart from "./components/AddToCart";
 
 
-
 const SingleProduct = () => {
   const { id } = useParams();
 
