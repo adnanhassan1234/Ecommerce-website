@@ -52,13 +52,13 @@ const Nav = () => {
                                     : ""
                             }
 
-                            <NavLink to="/cart" className="btn btn-light total_item mx-1"><FiShoppingCart /><span className='total-cart-item'>{total_item} </span></NavLink>
-                            
+                            <NavLink to="/cart" className="btn btn-light total_item mx-1"><FiShoppingCart /><span className='total-cart-item'> <sup><b>{total_item}</b>  </sup> </span></NavLink>
+
                             {/*============ Laptop view user profile ===============*/}
                             <NavLink className="btn btn-light name_none total_item mx-1">
                                 {
 
-                                    isAuthenticated && (<h5 className='my-1'>{user.name.slice(0, 5)}..</h5>)
+                                    isAuthenticated && (<h5 className='my-1'>{user.name.split(' ', 1)}..</h5>)
 
                                 }
                             </NavLink>
@@ -66,7 +66,7 @@ const Nav = () => {
                                 {
                                     isAuthenticated && (
                                         <div className='dropdown-toggle login_profile' type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img src={user.picture} alt={user.name} />
+                                            <img src={user.picture} alt={user.name.split(' ').map(word => word[0])} />
                                         </div>)
                                 }
                                 {/* Profile dropdown-menu */}
@@ -95,7 +95,6 @@ const Nav = () => {
                 {/*=========== mobile_view_user_profile ================*/}
                 <NavLink className="btn btn-light  total_items mx-1">
                     {
-
                         isAuthenticated && (<h4 className='my-1'>{user.name}</h4>)
 
                     }
@@ -105,7 +104,7 @@ const Nav = () => {
                     {
                         isAuthenticated && (
                             <div className='dropdown-toggle login_profile' type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src={user.picture} alt={user.name} />
+                                <img src={user.picture} alt={user.name.split(' ').map(word => word[0])} />
                             </div>)
                     }
                     {/* Profile dropdown-menu */}

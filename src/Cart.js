@@ -102,6 +102,11 @@ const Cart = () => {
                       <h6 className='my-2'>Shipping Fee : <span className='sub_total'> <b> <FormatPrice price={shipping_fee} /> </b></span></h6>  <hr />
 
                       <h6 className='my-2'>Order Total : <span className='sub_total'> <b> <FormatPrice price={shipping_fee + total_price} />  </b> </span></h6>
+                    
+                     <div className="processed float-right" style={{float:"right"}}>
+                     <Button type="button" variant="contained" className="my-2" color="primary">CHECKOUT TO BE PROCESSED</Button>
+                     </div>
+                   
                     </div>
                   </div>
                 </div>
